@@ -2,23 +2,30 @@
 
 ## Overview
 
-`@ton-api/client` is an automatically generated SDK that provides seamless access to the endpoints offered by [tonapi.io](https://tonapi.io). This client is specifically designed to integrate with the TON blockchain, offering type-safe interactions and full compatibility with @ton/core library.
+`@ton-api/client` is an automatically generated SDK that provides seamless access to the endpoints
+offered by [tonapi.io](https://tonapi.io). This client is specifically designed to integrate with
+the TON blockchain, offering type-safe interactions and full compatibility with @ton/core library.
 
 ## Documentation
 
-For a detailed view of all methods and endpoints in a Swagger format, refer to the [Swagger documentation](https://tonapi.io/api-v2)
-For detailed API information and endpoint descriptions, please refer to the [official documentation](https://docs.tonconsole.com/tonapi/rest-api) or check the [Swagger UI](https://tonapi.io/api-v2) for an interactive method list.
+For a detailed view of all methods and endpoints in a Swagger format, refer to the
+[Swagger documentation](https://tonapi.io/api-v2) For detailed API information and endpoint
+descriptions, please refer to the
+[official documentation](https://docs.tonconsole.com/tonapi/rest-api) or check the
+[Swagger UI](https://tonapi.io/api-v2) for an interactive method list.
 
 For usage examples, check the [TonAPI Cookbook](https://docs.tonconsole.com/tonapi/cookbook).
 
 ## Features
 
-- Full coverage of tonapi.io endpoints
-- Type-safe interactions with the API
-- Seamless integration with `@ton/core`
+-   Full coverage of tonapi.io endpoints
+-   Type-safe interactions with the API
+-   Seamless integration with `@ton/core`
 <!-- - Automatically generated from the latest API specifications -->
 
-Additionally, [`@ton-api/ton-adapter`](https://www.npmjs.com/package/@ton-api/ton-adapter) enables users to work with contracts written for `@ton/ton` through `@ton-api/client`, ensuring seamless integration while maintaining their existing code structure.
+Additionally, [`@ton-api/ton-adapter`](https://www.npmjs.com/package/@ton-api/ton-adapter) enables
+users to work with contracts written for `@ton/ton` through `@ton-api/client`, ensuring seamless
+integration while maintaining their existing code structure.
 
 ## Prerequisites
 
@@ -56,9 +63,9 @@ const ta = new TonApiClient({
 // Use the API
 async function fetchAccountEvents() {
     const address = Address.parse('YOUR_ADDRESS_HERE');
-    const events = await ta.accounts.getAccountEvents(address, { limit: 50 })
-    
-    console.log('Account events:', events)
+    const events = await ta.accounts.getAccountEvents(address, { limit: 50 });
+
+    console.log('Account events:', events);
 }
 
 fetchAccountEvents();
@@ -66,7 +73,8 @@ fetchAccountEvents();
 
 ## Documentation
 
-For detailed API information and endpoint descriptions, please refer to the [official documentation](https://docs.tonconsole.com/tonapi).
+For detailed API information and endpoint descriptions, please refer to the
+[official documentation](https://docs.tonconsole.com/tonapi).
 
 ## Usage Examples
 
@@ -75,7 +83,8 @@ For detailed API information and endpoint descriptions, please refer to the [off
 ```javascript
 const collectionAddress = Address.parse('COLLECTION_ADDRESS_HERE');
 
-ta.nft.getNftCollection(collectionAddress)
+ta.nft
+    .getNftCollection(collectionAddress)
     .then(collection => console.log('NFT Collection:', collection))
     .catch(error => console.error('Error fetching NFT collection:', error));
 ```
@@ -85,7 +94,8 @@ ta.nft.getNftCollection(collectionAddress)
 ```javascript
 const jettonAddress = Address.parse('JETTON_ADDRESS_HERE');
 
-ta.jettons.getJettonInfo(jettonAddress)
+ta.jettons
+    .getJettonInfo(jettonAddress)
     .then(jetton => console.log('Jetton Info:', jetton))
     .catch(error => console.error('Error fetching jetton info:', error));
 ```
@@ -96,10 +106,7 @@ ta.jettons.getJettonInfo(jettonAddress)
 import { beginCell, external, storeMessage, Address } from '@ton/core';
 
 const accountAddress = Address.parse('JETTON_ADDRESS_HERE');
-const exampleMessage = beginCell()
-    .storeUint(0, 64)
-    .endCell();
-    
+const exampleMessage = beginCell().storeUint(0, 64).endCell();
 
 const messageBoc = beginCell()
     .store(
@@ -116,6 +123,10 @@ ta.blockchain.sendBlockchainMessage({
     boc: messageBoc
 });
 ```
+
+## Whats new
+
+Upgraded to new ton api updates like typed liquidity deposit actions and more..
 
 ## License
 
