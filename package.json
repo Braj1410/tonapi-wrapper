@@ -28,10 +28,10 @@
     "bugs": {
         "url": "https://github.com/tonkeeper/tonapi-js/issues"
     },
-    "homepage": "https://github.com/tonkeeper/tonapi-js/blob/main/packages/client#readme",
+    "homepage": "https://github.com/Braj1410/tonapi-wrapper/blob/main/README.md",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/tonkeeper/tonapi-js.git"
+        "url": "git+https://github.com/Braj1410/tonapi-wrapper.git"
     },
     "scripts": {
         "build": "npm run clean && npx tsx ./src/generate.ts && npx tsc",
